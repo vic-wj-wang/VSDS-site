@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/GetStarted/Overview.vue'
 import GetStarted_Overview from '../views/GetStarted/Overview.vue'
 import AccessibilityOverview from '/src/views/Foundations/Accessibility/Overview/Overview.vue'
@@ -7,7 +7,7 @@ import AccessibilityDesigning from '/src/views/Foundations/Accessibility/Designi
 // component: () => import('../views/GetStarted/Overview.vue'),
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHashHistory(import.meta.env.BASE_URL),
     routes: [
         {
             path: '/',
