@@ -6,7 +6,7 @@
                 that ensure equal access, usability, and inclusion for all users, regardless of their
                 abilities.</template>
         </Herobanner>
-        <div class="article flex mt-16 px-20 box-border gap-10">
+        <div class="article flex mt-16 px-6 lg:px-20 box-border gap-10">
             <div class="mainbox w-full">
                 <SectionTitle :showTitle="false">
                     <template #sectionBrief>By implementing these accessible design principles, software and web

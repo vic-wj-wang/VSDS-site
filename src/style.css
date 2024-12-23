@@ -11,9 +11,6 @@ p{
     h2{
         @apply w-auto text-[32px] font-bold text-on-surface mb-5
     }
-    .article-section--title{
-        @apply w-full overflow-hidden
-    }
     h3{
         @apply text-xl font-bold text-on-surface
     }
