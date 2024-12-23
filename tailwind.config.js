@@ -17,17 +17,26 @@ export default {
     
     extend: {
       colors: {
-        'neutral-0': '#ffffff',
+        'on-surface-inverse': '#ffffff',
         'surface-100': '#000000',
+        'surface-200':'#F6F6F6',
+        'outline':'#E5E5E5',
+        'blue-100':'#E5ECFF',
         'blue-500':'#4C71D2',
+        'red-400':'#E7556E',
+        'green-500':'#81B23D',
         'on-surface': '#333333',
         'on-surface-variant':'#999999',
+        'on-info-variant':'#ffffff',
+        'tertiary-variant':'#2C9799',
         'slate-100': '#D3D6E1',
         'neutral-100': '#F6F6F6',
         'info-varient': '#2F88CC',
-        'link':'#5D80ED',
+        'link':'#3C5AAA',
         'link-variant':'#4C71D2',
         'green-100': '#E7F7D0',
+        'neutral-300':'#E5E5E5',
+        'purple-50':'#F6EAFF',
       },
       backgroundImage:{
         'herobannerbg':"url('/src/assets/images/herobanner-bg.png')",
