@@ -7,11 +7,38 @@
 p{
     @apply mt-4
 }
+.mainbox{
+    @apply w-full lg:w-[calc(100%_-_160px)]
+}
 @layer components{
     h2{
         @apply w-auto text-[32px] font-bold text-on-surface mb-5
     }
     h3{
-        @apply text-xl font-bold text-on-surface
+        @apply text-xl font-bold text-on-surface mt-6
+    }
+    .content-nav{
+        @apply block text-on-surface-variant text-on-surface duration-300 text-sm
+    }
+    .el-checkbox{
+        @apply flex h-full items-start whitespace-normal
+    }
+    .el-checkbox .el-checkbox__inner{
+        @apply w-5 h-5 !border-outline-variant rounded-[4px] !bg-on-info-variant relative hover:!border-neutral-variant duration-500
+    }
+    .el-checkbox.is-checked .el-checkbox__inner:after{
+        @apply !border-on-surface absolute translate-x-[-50%] translate-y-[-50%] top-[43%] left-[50%] rotate-45
+    }
+    .el-checkbox.is-checked .el-checkbox__label span{
+        @apply text-on-surface;
+    }
+    .el-dropdown-menu{
+        @apply px-2 py-2
+    }
+    .el-dropdown-menu .el-dropdown-menu__item{
+        @apply !rounded-lg hover:!bg-surface-200 hover:text-on-surface
+    }
+    .el-dropdown-menu__item.current{
+        @apply rounded-lg bg-surface-300
     }
 }

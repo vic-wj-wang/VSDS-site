@@ -18,7 +18,7 @@
                         design aims to create inclusive environments and products that can be enjoyed and utilized by
                         all individuals, regardless of their abilities or disabilities.</template>
                 </SectionTitle>
-                <div class="article--main">
+                <div class="article--main pb-14">
                     <div class="article-section mt-20" id="accessibility-design-principle">
                         <copyTitle>
                             <template #sectionTitle>Accessibility design principle</template>
@@ -34,26 +34,26 @@
                             <p>This focuses on making information and visual content perceivable by individuals with
                                 visual impairments. It involves using alternative text for images, providing clear color
                                 contrast, using readable fonts, and incorporating screen reader compatibility.</p>
-                            <h3 class="mt-6">Auditory accessibility</h3>
+                            <h3>Auditory accessibility</h3>
                             <p>This addresses the needs of individuals with hearing impairments. It includes providing
                                 captions or transcripts for audio and video content, using visual cues and alerts, and
                                 utilizing assistive listening devices.</p>
-                            <h3 class="mt-6">Cognitive accessibility</h3>
+                            <h3>Cognitive accessibility</h3>
                             <p>This considers the needs of individuals with cognitive impairments or learning
                                 disabilities. It involves presenting information in a clear and concise manner, using
                                 simple language, providing logical navigation, and avoiding unnecessary distractions.
                             </p>
-                            <h3 class="mt-6">User interface accessibility</h3>
+                            <h3>User interface accessibility</h3>
                             <p>This focuses on designing user interfaces of digital products and websites to be easily
                                 usable by individuals with disabilities. It includes features like keyboard
                                 accessibility, proper labeling of form fields, logical tab order, and providing
                                 sufficient time for interactions.</p>
                         </section>
-                        <div class="note flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-sm mt-8">
+                        <div class="actbtn flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-md mt-8">
                             <div class="icon">
                                 <img src="/src/assets/images/icons/accessibility.svg" alt="">
                             </div>
-                            <div class="note--inner">
+                            <div class="actbtn--inner">
                                 <span class="text-sm text-on-surface">Checklist</span>
                                 <p class="text-xs text-on-surface-variant">Overview of all foundation token items</p>
                             </div>
@@ -78,7 +78,7 @@
                                 <li class="font-bold">Reading disorder</li>
                             </ul>
                             <p>There are many different visual challenges people face ranging from full blindness to tunnel vision or the inability to see colour or certain colours, and over time as we age our vision deteriorates.Statistically, 20% of the population of the USA has a language-based learning disability. <span class="font-bold">It’s 1 in 5 persons</span>.</p>
-                            <h3 class="mt-6">Color blindness, Color vision deficiency</h3>
+                            <h3>Color blindness, Color vision deficiency</h3>
                             <ul class="mt-4">
                                 <li>According to Colour Blind Awareness 4.5% of the population are color-blind. If your audience is mostly male this increases to 8% （<span class="font-bold">1 in 12 male</span>）</li>
                                 <li>According to data from the Ministry of Health and Welfare, there are nearly one million people in Taiwan with color blindness (2008 data).</li>
@@ -105,40 +105,79 @@
                                 <img src="./dataimg/accessibility-2.jpg" alt="">
                             </div>
                         </section>
-                        <div class="note flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-sm mt-8">
+                        <div class="actbtn flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-md mt-8">
                             <div class="icon">
                                 <img src="/src/assets/images/icons/accessibility.svg" alt="">
                             </div>
-                            <div class="note--inner">
+                            <div class="actbtn--inner">
                                 <span class="text-sm text-on-surface">Checklist</span>
                                 <p class="text-xs text-on-surface-variant">Overview of all foundation token items</p>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="article-section mt-20" id="accessibility-testing">
+                        <copyTitle>
+                            <template #sectionTitle>Accessibility testing
+                            </template>
+                        </copyTitle>
+                        <section>
+                            <p>To ensure compliance with accessibility standards, products should undergo accessibility testing using tools like:</p>
+                        </section>
+                        <div class="actbox mt-6 flex gap-6">
+                            <a href="https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker?fuid=985746651307671417" target="_blank">
+                                <div class="actbtn px-4 py-3 border w-[255px] h-full box-border border-neutral-300 rounded-xl shadow-md cursor-pointer hover:bg-surface-200 duration-300">
+                                    <div class="header flex justify-between items-start mb-2">
+                                        <div class="flex items-start gap-1">
+                                            <img src="/src/assets/images/icons/figma.svg" alt="">
+                                            <div class="tag text-[10px] text-on-surface px-2 rounded-lg border border-surface-300">Plug-in</div>
+                                        </div>
+                                        <img src="/src/assets/images/icons/external.svg" alt="">
+                                    </div>
+                                    <div class="actbtn--inner">
+                                        <span class="block text-sm text-on-surface">Stark - Contrast & Accessibility Checker</span>
+                                        <span class="block text-xs text-on-surface-variant mt-2">Accessibility tools</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://www.figma.com/design/isKY3C4FK0mWm071TzIJhw/Icon-Library_VSDS?node-id=3923-13613&t=ANnFbBoQvPZCW1Ke-1&fuid=985746651307671417" target="_blank">
+                                <div class="actbtn px-4 py-3 border w-[255px] h-full box-border border-neutral-300 rounded-xl shadow-md cursor-pointer hover:bg-surface-200 duration-300">
+                                    <div class="header flex justify-between items-start mb-2">
+                                        <div class="flex items-start gap-1">
+                                            <img src="/src/assets/images/icons/w3c.svg" alt="">
+                                            <div class="tag text-[10px] text-on-surface px-2 rounded-lg border border-surface-300">Plug-in</div>
+                                        </div>
+                                        <img src="/src/assets/images/icons/external.svg" alt="">
+                                    </div>
+                                    <div class="actbtn--inner">
+                                        <span class="block text-sm text-on-surface">Techniques for WCAG 2.1</span>
+                                        <span class="block text-xs text-on-surface-variant mt-2">Web Accessibility Initiative</span>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                        </div>
                     </div>
                 </div>
-
             </div>
-            <div class="content hidden sticky lg:block w-[120px] min-h-[200px] shrink-0">
-                <h5 class="text-xs text-on-surface-variant mb-8">On this page</h5>
+            <ContentElm>
                 <ul>
                     <li class="mb-4">
-                        <router-link class="block text-on-surface-variant text-xs"
-                            :to="{hash: '#accessibility-design-principle' }">Accessibility design
+                        <router-link class="content-nav" :to="{hash: '#accessibility-design-principle' }">Accessibility design
                             principle</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="block text-on-surface-variant text-xs"
-                            :to="{hash: '#common-accessibility-design-aspects' }">Common accessibility design
+                        <router-link class="content-nav" :to="{hash: '#common-accessibility-design-aspects' }">Common accessibility design
                             aspects</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="block text-on-surface-variant text-xs"
-                            :to="{hash: '#visual-impairment-users' }">Visual impairment users Dyslexic,
+                        <router-link class="content-nav" :to="{hash: '#visual-impairment-users' }">Visual impairment users Dyslexic,
                             Learning/Cognitive users</router-link>
                     </li>
+                    <li class="mb-4">
+                        <router-link class="content-nav" :to="{hash: '#accessibility-testing' }">Accessibility testing</router-link>
+                    </li>
                 </ul>
-            </div>
+            </ContentElm>
         </div>
     </main>
 </template>
@@ -147,6 +186,7 @@
 import Herobanner from '/src/layouts/Herobanner/Herobanner.vue'
 import SectionTitle from '/src/layouts/SectionTitle/SectionTitle.vue'
 import copyTitle from '/src/components/copyTitle/copyTitle.vue'
+import ContentElm from '/src/layouts/ContentElm/ContentElm.vue'
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
