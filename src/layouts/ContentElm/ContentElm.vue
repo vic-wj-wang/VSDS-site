@@ -34,7 +34,7 @@ onMounted(() => {
 	if (contentElement.value) {
 		const rect = contentElement.value.getBoundingClientRect();
 		distanceFromTop = rect.top + window.scrollY - 56;
-		console.log('Distance from top to .content:', distanceFromTop);
+		// console.log('Distance from top to .content:', distanceFromTop);
 	}
 });
 

@@ -27,6 +27,7 @@ export default {
         'blue-500':'#4C71D2',
         'red-400':'#E7556E',
         'red-50':'#FFF3F5',
+        'red-200':'#FFBEC9',
         'green-500':'#81B23D',
         'on-surface': '#333333',
         'on-surface-variant':'#999999',
@@ -41,6 +42,7 @@ export default {
         'neutral-variant':'#333333',
         'neutral-300':'#E5E5E5',
         'purple-50':'#F6EAFF',
+        'purple-200':'#CA87FF',
         'tertiary-variant':'#2C9799',
       },
       backgroundImage:{

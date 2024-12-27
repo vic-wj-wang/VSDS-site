@@ -23,27 +23,27 @@
                         <copyTitle>
                             <template #sectionTitle>Accessibility design principle</template>
                         </copyTitle>
-                        <img src="./dataimg/accessibility-1.png" alt="">
+                        <img src="./dataimg/accessibility-1.jpg" alt="">
                     </div>
                     <div class="article-section mt-20" id="common-accessibility-design-aspects">
                         <copyTitle>
                             <template #sectionTitle>Common accessibility design aspects</template>
                         </copyTitle>
                         <section>
-                            <h3>Visual accessibility</h3>
+                            <h4>Visual accessibility</h4>
                             <p>This focuses on making information and visual content perceivable by individuals with
                                 visual impairments. It involves using alternative text for images, providing clear color
                                 contrast, using readable fonts, and incorporating screen reader compatibility.</p>
-                            <h3>Auditory accessibility</h3>
+                            <h4>Auditory accessibility</h4>
                             <p>This addresses the needs of individuals with hearing impairments. It includes providing
                                 captions or transcripts for audio and video content, using visual cues and alerts, and
                                 utilizing assistive listening devices.</p>
-                            <h3>Cognitive accessibility</h3>
+                            <h4>Cognitive accessibility</h4>
                             <p>This considers the needs of individuals with cognitive impairments or learning
                                 disabilities. It involves presenting information in a clear and concise manner, using
                                 simple language, providing logical navigation, and avoiding unnecessary distractions.
                             </p>
-                            <h3>User interface accessibility</h3>
+                            <h4>User interface accessibility</h4>
                             <p>This focuses on designing user interfaces of digital products and websites to be easily
                                 usable by individuals with disabilities. It includes features like keyboard
                                 accessibility, proper labeling of form fields, logical tab order, and providing
@@ -55,7 +55,7 @@
                             </div>
                             <div class="actbtn--inner">
                                 <span class="text-sm text-on-surface">Checklist</span>
-                                <p class="text-xs text-on-surface-variant">Overview of all foundation token items</p>
+                                <p class="text-xs text-on-surface-variant mt-2">Overview of all foundation token items</p>
                             </div>
                         </div>
 
@@ -78,7 +78,7 @@
                                 <li class="font-bold">Reading disorder</li>
                             </ul>
                             <p>There are many different visual challenges people face ranging from full blindness to tunnel vision or the inability to see colour or certain colours, and over time as we age our vision deteriorates.Statistically, 20% of the population of the USA has a language-based learning disability. <span class="font-bold">It’s 1 in 5 persons</span>.</p>
-                            <h3>Color blindness, Color vision deficiency</h3>
+                            <h4>Color blindness, Color vision deficiency</h4>
                             <ul class="mt-4">
                                 <li>According to Colour Blind Awareness 4.5% of the population are color-blind. If your audience is mostly male this increases to 8% （<span class="font-bold">1 in 12 male</span>）</li>
                                 <li>According to data from the Ministry of Health and Welfare, there are nearly one million people in Taiwan with color blindness (2008 data).</li>
@@ -90,7 +90,7 @@
                         </section>
                         <section class="flex gap-8 flex-wrap items-start lg:flex-nowrap">
                             <div class="w-full lg:w-1/2">
-                                <h3 class="mt-6">Color blindness, Color vision deficiency</h3>
+                                <h4 class="mt-6">Color blindness, Color vision deficiency</h4>
                                 <span class="block mt-4">What they see</span>
                                 <ul class="list-disc ml-4">
                                     <li>Swirling or blurring text</li>
@@ -111,7 +111,7 @@
                             </div>
                             <div class="actbtn--inner">
                                 <span class="text-sm text-on-surface">Checklist</span>
-                                <p class="text-xs text-on-surface-variant">Overview of all foundation token items</p>
+                                <p class="text-xs text-on-surface-variant mt-2">Overview of all foundation token items</p>
                             </div>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                         <section>
                             <p>To ensure compliance with accessibility standards, products should undergo accessibility testing using tools like:</p>
                         </section>
-                        <div class="actbox mt-6 flex gap-6">
+                        <div class="actbox mt-6 flex flex-wrap gap-6">
                             <a href="https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker?fuid=985746651307671417" target="_blank">
                                 <div class="actbtn px-4 py-3 border w-[255px] h-full box-border border-neutral-300 rounded-xl shadow-md cursor-pointer hover:bg-surface-200 duration-300">
                                     <div class="header flex justify-between items-start mb-2">

@@ -3,7 +3,12 @@ import HomeView from '../views/GetStarted/Overview.vue'
 import GetStarted_Overview from '/src/views/GetStarted/Overview.vue'
 import AccessibilityOverview from '/src/views/Foundations/Accessibility/Overview.vue'
 import AccessibilityChecklist from '/src/views/Foundations/Accessibility/Checklist.vue'
-import AccessibilityDesigning from '/src/views/Foundations/Accessibility/Designing.vue'
+// import AccessibilityDesigning from '/src/views/Foundations/Accessibility/Designing.vue'
+import AccessibilityDesigningColorTypography from '/src/views/Foundations/Accessibility/Designing/Color-Typography.vue'
+import AccessibilityDesigningLayoutNavigation from '/src/views/Foundations/Accessibility/Designing/Layout-Navigation.vue'
+import AccessibilityDesigningLinksButtons from '/src/views/Foundations/Accessibility/Designing/Links-Buttons.vue'
+import AccessibilityFormsControlsDycontents from '/src/views/Foundations/Accessibility/Designing/Forms-Controls-DynamicContent.vue'
+import DesignTokensOverview from '/src/views/Foundations/DesignTokens/Design-Tokens.vue'
 // component: () => import('../views/GetStarted/Overview.vue'),
 
 const router = createRouter({
@@ -52,9 +57,29 @@ const router = createRouter({
             component: AccessibilityChecklist,
         },
         {
-            path: '/Foundations/Accessibility/Designing',
-            name: 'AccessibilityDesigning',
-            component: AccessibilityDesigning,
+            path: '/Foundations/Accessibility/Designing/Color-Typograpy',
+            name: 'AccessibilityDesigningColorTypography',
+            component: AccessibilityDesigningColorTypography,
+        },
+        {
+            path: '/Foundations/Accessibility/Designing/Layout-Navigation',
+            name: 'AccessibilityDesigningLayoutNavigation',
+            component: AccessibilityDesigningLayoutNavigation,
+        },
+        {
+            path: '/Foundations/Accessibility/Designing/Links-Buttons',
+            name: 'AccessibilityDesigningLinksButtons',
+            component: AccessibilityDesigningLinksButtons,
+        },
+        {
+            path: '/Foundations/Accessibility/Designing/Forms-Controls-DynamicContent',
+            name: 'AccessibilityFormsControlsDycontents',
+            component: AccessibilityFormsControlsDycontents,
+        },
+        {
+            path: '/Foundations/Designtokens/Design-tokens',
+            name: 'DesignTokensOverview',
+            component: DesignTokensOverview,
         },
     ],
 })

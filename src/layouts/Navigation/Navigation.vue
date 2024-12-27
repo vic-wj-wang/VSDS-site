@@ -92,7 +92,16 @@ watch(isActiveMnav, (newValue) => {
 									<div class="nav-tri mt-2 pl-3 ">
 										<router-link :to="{ name: 'AccessibilityOverview', params: {} }" class="text-on-surface-variant block mb-2 text-xs" activeClass="!text-link font-bold" @click="setActive(1)">Overview</router-link>
 										<router-link :to="{ name: 'AccessibilityChecklist', params: {} }" class="text-on-surface-variant block mb-2 text-xs" activeClass="!text-link font-bold" @click="setActive(1)">Checklist</router-link>
-										<router-link :to="{ name: 'AccessibilityDesigning', params: {} }" class="text-on-surface-variant block mb-2 text-xs" activeClass="!text-link font-bold" @click="setActive(1)">Designing</router-link>
+										<router-link :to="{ name: 'AccessibilityDesigningColorTypography', params: {} }" class="text-on-surface-variant block mb-2 text-xs" activeClass="!text-link font-bold" @click="setActive(1)">Designing</router-link>
+									</div>
+								</div>
+							</transition>
+							<transition>
+								<div class="nav-sub" v-if="activeParent === 1">
+									<router-link :to="{ name: 'AccessibilityOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold" :class="{ active: activeParent === 1 }" @click="setActive(1)">Design tokens</router-link>
+									<div class="nav-tri mt-2 pl-3 ">
+										<router-link :to="{ name: 'DesignTokensOverview', params: {} }" class="text-on-surface-variant block mb-2 text-xs">Overview</router-link>
+										
 									</div>
 								</div>
 							</transition>

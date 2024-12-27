@@ -7,7 +7,6 @@ import SectionTitle from '../../layouts/SectionTitle/SectionTitle.vue'
     <main class="grow">
         <Herobanner :showHeroBrief="false">
             <template #pageTitle>Get started</template>
-            <template #pageBrief>In software or web design it involves incorporating design principles and techniques that ensure equal access, usability, and inclusion for all users, regardless of their abilities.</template>
         </Herobanner>
         <div class="article flex mt-16 mr-20 ml-20 gap-10">
             <div class="mainbox w-full">
