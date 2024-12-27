@@ -66,7 +66,7 @@
                             </template>
                         </copyTitle>
                         <section>
-                            <ul class="list-disc text-2xl font-bold ml-8">
+                            <ul class="list-disc text-2xl font-bold ml-2">
                                 <li class="font-bold">Blindness</li>
                                 <li class="font-bold">Central field loss </li>
                                 <li class="font-bold">Clouded vision</li>

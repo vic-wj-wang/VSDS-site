@@ -58,7 +58,7 @@ watch(isActiveMnav, (newValue) => {
 		<img src="../../assets/images/icon-nav-divider.svg" alt="" class="divider mb-8">
 		<div>
 			<nav class="menu">
-				<ul>
+				<ul class="pl-0 list-none">
 					<li>
 						<div class="nav-main">
 							<div class="nav-main--item flex items-center justify-between mb-3">

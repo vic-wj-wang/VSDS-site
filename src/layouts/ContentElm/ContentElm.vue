@@ -1,5 +1,5 @@
 <template>
-	<div class="content hidden lg:block w-[120px] min-h-[200px] shrink-0" :class="{ is_sticky: isSticky }"
+	<div class="contentlist hidden lg:block w-[120px] min-h-[200px] shrink-0" :class="{ is_sticky: isSticky }"
 		ref="contentElement">
 		<h5 class="text-[10px] text-on-surface-variant mb-8">On this page</h5>
 		<slot></slot>
@@ -14,7 +14,7 @@ let distanceFromTop;
 const isSticky = ref(false);
 const handleScroll = () => {
 	nextTick(() => {
-		const contentElement = document.querySelector('.content');
+		const contentElement = document.querySelector('.contentlist');
 		if (!contentElement) return;
 		const offset = window.scrollY;
 		// console.log('Current offset:', offset);
@@ -44,12 +44,12 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.content {
+.contentlist {
   position: relative;
   transition: position 0.3s ease, top 0.3s ease;
 }
 
-.content.is_sticky {
+.contentlist.is_sticky {
   position: fixed;
   top: 56px;
   right:80px;

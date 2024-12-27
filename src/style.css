@@ -4,15 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    @apply text-on-surface text-sm
+}
 p{
-    @apply mt-4
+    @apply mt-4 text-on-surface text-sm
 }
 .mainbox{
     @apply w-full lg:w-[calc(100%_-_160px)]
 }
+main{
+    @apply bg-on-surface-inverse;
+}
+ul{
+    @apply text-on-surface list-disc pl-4
+}
 @layer components{
     h2{
-        @apply w-auto text-[32px] font-bold text-on-surface mb-5
+        @apply w-auto text-[32px] leading-[120%] font-bold text-on-surface mb-5
     }
     h3{
         @apply text-2xl font-bold text-on-surface mt-6
@@ -23,8 +32,11 @@ p{
     .content-nav{
         @apply block text-on-surface-variant hover:text-on-surface duration-300 text-xs
     }
+    .contentlist ul{
+        @apply pl-0 list-none
+    }
     .tabbox-item{
-        @apply text-xs px-4 py-3 rounded-2xl lg:text-sm lg:rounded-full lg:px-12 lg:py-5 hover:bg-slate-100 duration-300 shrink-0
+        @apply text-xs text-on-surface px-4 py-3 rounded-2xl lg:text-sm lg:rounded-full lg:px-12 lg:py-5 hover:bg-slate-100 duration-300 shrink-0
     }
     .el-checkbox{
         @apply flex h-full items-start whitespace-normal

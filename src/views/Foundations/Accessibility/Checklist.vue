@@ -69,7 +69,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Screen Reader Compatibility</h4>
-                                        <p class="mt-3">Ensure that all interactive elements (e.g., buttons, forms, links) are navigable and understandable by screen readers.</p>
+                                        <p class="mt-3 text-xs">Ensure that all interactive elements (e.g., buttons, forms, links) are navigable and understandable by screen readers.</p>
                                         <div class="wrapper border-blue-100 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -126,7 +126,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Keyboard Accessibility</h4>
-                                        <p class="mt-3">Ensure that all product functions are accessible via keyboard, as many users cannot rely on a mouse due to physical or motor impairments.</p>
+                                        <p class="mt-3 text-xs">Ensure that all product functions are accessible via keyboard, as many users cannot rely on a mouse due to physical or motor impairments.</p>
                                         <div class="wrapper border-green-100 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -168,7 +168,7 @@
                                             <span class="bg-purple-500 w-full block h-1"></span>
                                         </div>
                                         <h4>Color Contrast and Customizable Text</h4>
-                                        <p class="mt-3">Provide high color contrast between text and background, along with options to adjust font size and color schemes for users with low vision or color blindness.</p>
+                                        <p class="mt-3 text-xs">Provide high color contrast between text and background, along with options to adjust font size and color schemes for users with low vision or color blindness.</p>
                                         <div class="wrapper border-purple-50 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -212,7 +212,7 @@
                                             <span class="bg-purple-500 w-full block h-1"></span>
                                         </div>
                                         <h4>Error Identification and Suggestions</h4>
-                                        <p class="mt-3">Provide clear feedback when users make errors (e.g., filling out forms or assessments) and offer suggestions for correction.</p>
+                                        <p class="mt-3 text-xs">Provide clear feedback when users make errors (e.g., filling out forms or assessments) and offer suggestions for correction.</p>
                                         <div class="wrapper border-purple-50 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -255,7 +255,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Focus Indicators</h4>
-                                        <p class="mt-3">Ensure that users can visually identify which element on the screen is currently selected or focused (e.g., which button is active when navigating by keyboard).</p>
+                                        <p class="mt-3 text-xs">Ensure that users can visually identify which element on the screen is currently selected or focused (e.g., which button is active when navigating by keyboard).</p>
                                         <div class="wrapper border-green-100 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -282,7 +282,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Adjustable Visual Display (Magnifiers, Zoom, Backgrounds)</h4>
-                                        <p class="mt-3">Allow users to magnify text and images or adjust background colors to reduce visual strain (especially for students with visual impairments or dyslexia).</p>
+                                        <p class="mt-3 text-xs">Allow users to magnify text and images or adjust background colors to reduce visual strain (especially for students with visual impairments or dyslexia).</p>
                                         <div class="wrapper border-green-100 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -310,7 +310,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Navigation and Structure Consistency</h4>
-                                        <p class="mt-3">Ensure consistent and intuitive navigation and content structure across the platform for ease of use. Consistent layouts help students with cognitive impairments or learning disabilities.</p>
+                                        <p class="mt-3 text-xs">Ensure consistent and intuitive navigation and content structure across the platform for ease of use. Consistent layouts help students with cognitive impairments or learning disabilities.</p>
                                         <div class="wrapper border-red-50 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -347,7 +347,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Closed Captioning and Live Captions</h4>
-                                        <p class="mt-3">All video and audio content must include accurate closed captions. Live captioning for real-time lectures or videos is also necessary for students with hearing impairments.</p>
+                                        <p class="mt-3 text-xs">All video and audio content must include accurate closed captions. Live captioning for real-time lectures or videos is also necessary for students with hearing impairments.</p>
                                         <div class="wrapper border-blue-100 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -399,7 +399,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Accessible Learning Materials (Digital and Print Options)</h4>
-                                        <p class="mt-3">Ensure all learning materials are available in multiple formats: large print, digital files (adjustable), audio files, and braille (if applicable).</p>
+                                        <p class="mt-3 text-xs">Ensure all learning materials are available in multiple formats: large print, digital files (adjustable), audio files, and braille (if applicable).</p>
                                         <div class="wrapper border-blue-100 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -436,7 +436,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Descriptive Audio/Video for Visual Impairments (Audio Descriptions)</h4>
-                                        <p class="mt-3">Provide audio descriptions for all visual content, explaining what is happening on screen for students with visual impairments.</p>
+                                        <p class="mt-3 text-xs">Provide audio descriptions for all visual content, explaining what is happening on screen for students with visual impairments.</p>
                                         <div class="wrapper border-blue-100 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -473,7 +473,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Clear and Simple Language</h4>
-                                        <p class="mt-3">Content should be presented using clear and simple language for students with cognitive disabilities.</p>
+                                        <p class="mt-3 text-xs">Content should be presented using clear and simple language for students with cognitive disabilities.</p>
                                         <div class="wrapper border-blue-100 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -510,7 +510,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Accessible Data Visualization</h4>
-                                        <p class="mt-3">Ensure that graphs, charts, and visual data representations are understandable for students with visual impairments or cognitive challenges.</p>
+                                        <p class="mt-3 text-xs">Ensure that graphs, charts, and visual data representations are understandable for students with visual impairments or cognitive challenges.</p>
                                         <div class="wrapper border-blue-100 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
@@ -547,7 +547,7 @@
                                             <span class="bg-purple-500 w-full block h-1 bg-opacity-20"></span>
                                         </div>
                                         <h4>Multilingual and Translation Support</h4>
-                                        <p class="mt-3">Offer built-in multilingual support and automatic or manual translation for non-native speakers or English language learners.</p>
+                                        <p class="mt-3 text-xs">Offer built-in multilingual support and automatic or manual translation for non-native speakers or English language learners.</p>
                                         <div class="wrapper border-blue-100 border-2 rounded-lg box-border px-6 py-6 mt-4 flex flex-col gap-6">
                                             <div class="check-item">
                                                 <div class="wrapper">
