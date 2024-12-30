@@ -98,11 +98,22 @@ watch(isActiveMnav, (newValue) => {
 							</transition>
 							<transition>
 								<div class="nav-sub" v-if="activeParent === 1">
-									<router-link :to="{ name: 'AccessibilityOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold" :class="{ active: activeParent === 1 }" @click="setActive(1)">Design tokens</router-link>
+									<router-link :to="{ name: 'DesignTokensOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold" :class="{ active: activeParent === 1 }" @click="setActive(1)">Design tokens</router-link>
 									<div class="nav-tri mt-2 pl-3 ">
 										<router-link :to="{ name: 'DesignTokensOverview', params: {} }" class="text-on-surface-variant block mb-2 text-xs">Overview</router-link>
-										
+										<router-link :to="{ name: 'DesignTokensFoundationTokens', params: {} }" class="text-on-surface-variant block mb-2 text-xs">Foundation tokens</router-link>
+										<router-link :to="{ name: 'DesignTokensAliasTokens', params: {} }" class="text-on-surface-variant block mb-2 text-xs">Alias tokens</router-link>
 									</div>
+								</div>
+							</transition>
+							<transition>
+								<div class="nav-sub" v-if="activeParent === 1">
+									<router-link :to="{ name: 'Themes', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold" :class="{ active: activeParent === 1 }" @click="setActive(1)">Themes</router-link>
+								</div>
+							</transition>
+							<transition>
+								<div class="nav-sub" v-if="activeParent === 1">
+									<router-link :to="{ name: 'Interaction', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold" :class="{ active: activeParent === 1 }" @click="setActive(1)">Interaction</router-link>
 								</div>
 							</transition>
 						</div>
@@ -111,39 +122,24 @@ watch(isActiveMnav, (newValue) => {
 					<li>
 						<div class="nav-main">
 							<div class="nav-main--item flex items-center justify-between mb-3">
-								<router-link :to="{ name: 'AccessibilityOverview'}" class="nav-main--item text-base font-bold text-neutral-50" @click="toggleParent(2)">Tri</router-link>
+								<router-link :to="{ name: 'StylesOverview'}" class="nav-main--item text-base font-bold text-neutral-50" @click="toggleParent(2)">Styles</router-link>
 								<div class="icon">
 									<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" class="fill-white" clip-rule="evenodd" d="M0.362254 0.902782C0.101905 1.16313 0.101905 1.58524 0.362254 1.84559L4.52892 6.01226C4.78927 6.27261 5.21138 6.27261 5.47173 6.01226L9.6384 1.84559C9.89875 1.58524 9.89875 1.16313 9.6384 0.902782C9.37805 0.642433 8.95594 0.642433 8.69559 0.902782L5.00033 4.59804L1.30506 0.902782C1.04471 0.642432 0.622604 0.642432 0.362254 0.902782Z" fill="#333333"/></svg>
 								</div>
 							</div>
 							<transition name="expand">
 								<div class="nav-sub" v-if="activeParent === 2">
-									<router-link :to="{ name: 'AccessibilityOverview', params: {} }" class="nav-sub--item block text-sm text-[#B2B2B2]" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Accessibility</router-link>
-									<div class="nav-tri mt-2 pl-3">
-										<router-link :to="{ name: 'AccessibilityOverview', params: {} }" class="nav-sub--item block mb-2 text-xs text-[#B2B2B2]" activeClass="text-link" @click="setActive(2)">Overview</router-link>
-										<router-link :to="{ name: 'AccessibilityChecklist', params: {} }" class="nav-sub--item block mb-2 text-xs text-[#B2B2B2]" activeClass="text-link" @click="setActive(2)">Checklist</router-link>
-										<router-link :to="{ name: 'AccessibilityDesigning', params: {} }" class="nav-sub--item block mb-2 text-xs text-[#B2B2B2]" activeClass="text-link" @click="setActive(2)">Designing</router-link>
-									</div>
+									<router-link :to="{ name: 'StylesOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Overview</router-link>
+									<router-link :to="{ name: 'StylesColor', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Color</router-link>
+									<router-link :to="{ name: 'StylesOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Elevation</router-link>
+									<router-link :to="{ name: 'StylesOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Iconography</router-link>
+									<router-link :to="{ name: 'StylesOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Layout</router-link>
+									<router-link :to="{ name: 'StylesOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Typography</router-link>
 								</div>
 							</transition>
+							
 						</div>
 						
-					</li>
-					<li>
-						<div class="nav-main">
-							<div class="nav-sub">
-								<div class="nav-tri"></div>
-								<div class="nav-tri"></div>
-								<div class="nav-tri"></div>
-							</div>
-						</div>
-						<div class="nav-main">
-							<div class="nav-sub">
-								<div class="nav-tri"></div>
-								<div class="nav-tri"></div>
-								<div class="nav-tri"></div>
-							</div>
-						</div>
 					</li>
 				</ul>
 			</nav>

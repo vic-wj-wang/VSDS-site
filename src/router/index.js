@@ -3,12 +3,17 @@ import HomeView from '../views/GetStarted/Overview.vue'
 import GetStarted_Overview from '/src/views/GetStarted/Overview.vue'
 import AccessibilityOverview from '/src/views/Foundations/Accessibility/Overview.vue'
 import AccessibilityChecklist from '/src/views/Foundations/Accessibility/Checklist.vue'
-// import AccessibilityDesigning from '/src/views/Foundations/Accessibility/Designing.vue'
 import AccessibilityDesigningColorTypography from '/src/views/Foundations/Accessibility/Designing/Color-Typography.vue'
 import AccessibilityDesigningLayoutNavigation from '/src/views/Foundations/Accessibility/Designing/Layout-Navigation.vue'
 import AccessibilityDesigningLinksButtons from '/src/views/Foundations/Accessibility/Designing/Links-Buttons.vue'
 import AccessibilityFormsControlsDycontents from '/src/views/Foundations/Accessibility/Designing/Forms-Controls-DynamicContent.vue'
 import DesignTokensOverview from '/src/views/Foundations/DesignTokens/Design-Tokens.vue'
+import DesignTokensFoundationTokens from '/src/views/Foundations/DesignTokens/Foundation-Tokens.vue'
+import DesignTokensAliasTokens from '/src/views/Foundations/DesignTokens/Alias-Tokens.vue'
+import Themes from '/src/views/Foundations/Themes/Themes.vue'
+import Interaction from '/src/views/Foundations/Interaction/Interaction.vue'
+import StylesOverview from '/src/views/Styles/Overview.vue'
+import StylesColor from '/src/views/Styles/Color.vue'
 // component: () => import('../views/GetStarted/Overview.vue'),
 
 const router = createRouter({
@@ -24,7 +29,7 @@ const router = createRouter({
                         el: to.hash,
                         behavior: 'smooth',
                     });
-                }, 300);
+                }, 500);
             });
         }
 
@@ -81,6 +86,36 @@ const router = createRouter({
             name: 'DesignTokensOverview',
             component: DesignTokensOverview,
         },
+        {
+            path: '/Foundations/Designtokens/Foundation-tokens',
+            name: 'DesignTokensFoundationTokens',
+            component: DesignTokensFoundationTokens,
+        },
+        {
+            path: '/Foundations/Designtokens/Alias-tokens',
+            name: 'DesignTokensAliasTokens',
+            component: DesignTokensAliasTokens,
+        },     
+        {
+            path: '/Foundations/Themes',
+            name: 'Themes',
+            component: Themes,
+        },  
+        {
+            path: '/Foundations/Interaction',
+            name: 'Interaction',
+            component: Interaction,
+        },
+        {
+            path: '/Styles/Overview',
+            name: 'StylesOverview',
+            component: StylesOverview,
+        },
+        {
+            path: '/Styles/Color',
+            name: 'StylesColor',
+            component: StylesColor,
+        },                            
     ],
 })
 

@@ -38,6 +38,28 @@ ul{
     .tabbox-item{
         @apply text-xs text-on-surface px-4 py-3 rounded-2xl lg:text-sm lg:rounded-full lg:px-12 lg:py-5 hover:bg-slate-100 duration-300 shrink-0
     }
+    .actbtn{
+        @apply hover:bg-surface-200 duration-300
+    }
+    .custom-table .thead .tr{
+        @apply  flex w-full pb-3 border-b border-vsds-color-neutral-200
+    }
+    .custom-table .thead .tr .th{
+        @apply text-xs text-vsds-color-neutral-600
+    }
+    .custom-table .tbody .tr{
+        @apply text-xs flex w-full py-3 items-center border-b border-vsds-color-neutral-200
+    }
+    .custom-table .tr .td{
+        @apply text-xs text-vsds-color-neutral-900
+    }
+    .imgbox img{
+        @apply w-full
+    }
+    .color-ticket{
+        @apply w-[24px] h-[24px] rounded-full block
+    }
+    /* form elm */
     .el-checkbox{
         @apply flex h-full items-start whitespace-normal
     }
@@ -58,5 +80,11 @@ ul{
     }
     .el-dropdown-menu__item.current{
         @apply rounded-lg bg-surface-300
+    }
+    .tag-required{
+        @apply inline-block px-2 py-1 font-medium bg-vsds-color-neutral-1000 text-vsds-color-neutral-0 rounded-full
+    }
+    .tag-optional{
+        @apply inline-block px-2 py-1 font-medium border border-vsds-color-neutral-1000 text-on-surface rounded-full
     }
 }
