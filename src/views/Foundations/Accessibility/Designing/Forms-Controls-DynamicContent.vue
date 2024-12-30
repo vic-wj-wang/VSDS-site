@@ -9,7 +9,7 @@
                 <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningColorTypography'}">Color & Typography</RouterLink>
                 <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningLayoutNavigation'}">Layout & Navigation</RouterLink>
                 <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningLinksButtons'}">Links & Buttons</RouterLink>
-                <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityFormsControlsDycontents'}">Forms, Controls, Dynamic Content</RouterLink>
+                <RouterLink class="tabbox-item active" :to="{ name: 'AccessibilityFormsControlsDycontents'}">Forms, Controls, Dynamic Content</RouterLink>
             </div>
         </div>
         <div class="article flex mt-16 px-6 lg:px-20 box-border gap-10">

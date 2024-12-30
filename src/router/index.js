@@ -14,6 +14,12 @@ import Themes from '/src/views/Foundations/Themes/Themes.vue'
 import Interaction from '/src/views/Foundations/Interaction/Interaction.vue'
 import StylesOverview from '/src/views/Styles/Overview.vue'
 import StylesColor from '/src/views/Styles/Color.vue'
+import StylesElevation from '/src/views/Styles/Elevation.vue'
+import StylesIconography from '/src/views/Styles/Iconography.vue'
+import StylesLayout from '/src/views/Styles/Layout.vue'
+import StylesTypography from '/src/views/Styles/Typography.vue'
+import ComponentsDesignKit from '/src/views/Components/DesignKit.vue'
+import ComponentsModularComponents from '/src/views/Components/ModularComponents.vue'
 // component: () => import('../views/GetStarted/Overview.vue'),
 
 const router = createRouter({
@@ -115,7 +121,37 @@ const router = createRouter({
             path: '/Styles/Color',
             name: 'StylesColor',
             component: StylesColor,
-        },                            
+        },
+        {
+            path: '/Styles/Elevation',
+            name: 'StylesElevation',
+            component: StylesElevation,
+        },
+        {
+            path: '/Styles/Iconography',
+            name: 'StylesIconography',
+            component: StylesIconography,
+        },
+        {
+            path: '/Styles/Layout',
+            name: 'StylesLayout',
+            component: StylesLayout,
+        }, 
+        {
+            path: '/Styles/Typography',
+            name: 'StylesTypography',
+            component: StylesTypography,
+        },  
+        {
+            path: '/Components/Design-Kit',
+            name: 'ComponentsDesignKit',
+            component: ComponentsDesignKit,
+        }, 
+        {
+            path: '/Components/Modular-Components',
+            name: 'ComponentsModularComponents',
+            component: ComponentsModularComponents,
+        },                   
     ],
 })
 

@@ -49,7 +49,7 @@
                                 accessibility, proper labeling of form fields, logical tab order, and providing
                                 sufficient time for interactions.</p>
                         </section>
-                        <div class="actbtn flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-md mt-8">
+                        <a href="/VSDS-site/#/Foundations/Accessibility/Checklist" class="actbtn flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-md mt-8">
                             <div class="icon">
                                 <img src="/src/assets/images/icons/accessibility.svg" alt="">
                             </div>
@@ -57,7 +57,7 @@
                                 <span class="text-sm text-on-surface">Checklist</span>
                                 <p class="text-xs text-on-surface-variant mt-2">Overview of all foundation token items</p>
                             </div>
-                        </div>
+                        </a>
 
                     </div>
                     <div class="article-section mt-20" id="visual-impairment-users">
@@ -105,15 +105,15 @@
                                 <img src="./dataimg/accessibility-2.jpg" alt="">
                             </div>
                         </section>
-                        <div class="actbtn flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-md mt-8">
+                        <a href="/VSDS-site/#/Foundations/Accessibility/Designing/Color-Typograpy" class="actbtn flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-md mt-8">
                             <div class="icon">
                                 <img src="/src/assets/images/icons/accessibility.svg" alt="">
                             </div>
                             <div class="actbtn--inner">
-                                <span class="text-sm text-on-surface">Checklist</span>
-                                <p class="text-xs text-on-surface-variant mt-2">Overview of all foundation token items</p>
+                                <span class="text-sm text-on-surface">How to design for accessibility</span>
+                                <p class="text-xs text-on-surface-variant mt-2">Focuses on creating designs that meet accessibility needs</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="article-section mt-20" id="accessibility-testing">
                         <copyTitle>

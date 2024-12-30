@@ -7,7 +7,7 @@
         <div class="tabbox bg-neutral-100 rounded-full mt-16 mx-6 lg:mx-20 overflow-x-auto shadow-md">
             <div class="tabbox-wrapper inline-flex flex-nowrap">
                 <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningColorTypography'}">Color & Typography</RouterLink>
-                <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningLayoutNavigation'}">Layout & Navigation</RouterLink>
+                <RouterLink class="tabbox-item active" :to="{ name: 'AccessibilityDesigningLayoutNavigation'}">Layout & Navigation</RouterLink>
                 <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningLinksButtons'}">Links & Buttons</RouterLink>
                 <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityFormsControlsDycontents'}">Forms, Controls, Dynamic Content</RouterLink>
             </div>

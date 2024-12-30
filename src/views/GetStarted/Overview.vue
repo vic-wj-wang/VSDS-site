@@ -1,6 +1,10 @@
 <script setup>
-import Herobanner from '../../layouts/Herobanner/Herobanner.vue'
-import SectionTitle from '../../layouts/SectionTitle/SectionTitle.vue'
+import Herobanner from '/src/layouts/Herobanner/Herobanner.vue'
+import SectionTitle from '/src/layouts/SectionTitle/SectionTitle.vue'
+import copyTitle from '/src/components/copyTitle/copyTitle.vue'
+import ContentElm from '/src/layouts/ContentElm/ContentElm.vue'
+import { useRouter } from 'vue-router';
+const router = useRouter();
 </script>
 
 <template>
@@ -8,23 +12,32 @@ import SectionTitle from '../../layouts/SectionTitle/SectionTitle.vue'
         <Herobanner :showHeroBrief="false">
             <template #pageTitle>Get started</template>
         </Herobanner>
-        <div class="article flex mt-16 mr-20 ml-20 gap-10">
+        <div class="article flex mt-16 px-6 lg:px-20 box-border gap-10">
             <div class="mainbox w-full">
-                <SectionTitle :showTitle="false">
-                    <template #sectionBrief>By implementing these accessible design principles, software and web designers can create digital products that are more inclusive, usable, and accessible to a diverse range of users, including those with disabilities.<br>Accessible design is not only beneficial for individuals with disabilities but also for a broader range of users. It promotes inclusivity, equal access to information and services, and a more user-friendly experience for everyone. By considering diverse user needs from the beginning of the design process, accessible design aims to create inclusive environments and products that can be enjoyed and utilized by all individuals, regardless of their abilities or disabilities.</template>
+                <SectionTitle>
+                    <template #sectionTitle>Section Title</template>
+                    <template #sectionBrief>VSDS defines two color palettes: foundation and neutral. Each is designed with specific functions and contexts. 
+                        Learn more about how to apply each palette effectively across different products.
+                    </template>
                 </SectionTitle>
-                
+                <div class="article--main pb-14">
+                    <div class="article-section mt-20 lg:mt-[120px]" id="vsds-palettes">
+                        <copyTitle>
+                            <template #sectionTitle>Article</template>
+                        </copyTitle>
+                        <p>
+                            To maintain brand consistency and diverse values across ViewSonic products, the Foundation colors offer a palette of 9 colors that can be flexibly applied to various contexts and components.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="content hidden lg:block w-[120px] min-h-[200px]">
-                <h5>On this page</h5>
+            <ContentElm>
                 <ul>
-                    <li>content link1</li>
-                    <li>content link2</li>
-                    <li>content link3</li>
-                    <li>content link4</li>
-                    <li>content link5</li>
+                    <li class="mb-4">
+                        <router-link class="content-nav" :to="{hash: '#vsds-palettes' }">VSDS palettes</router-link>
+                    </li>
                 </ul>
-            </div>
+            </ContentElm>
         </div>
     </main>
 </template>

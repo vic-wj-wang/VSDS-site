@@ -169,6 +169,8 @@ export default {
       },
       backgroundImage:{
         'herobannerbg':"url('/src/assets/images/herobanner-bg.png')",
+        'herobannerbg-style':"url('/src/assets/images/herobanner-bg-style.png')",
+        'herobannerbg-component':"url('/src/assets/images/herobanner-bg-component.png')",
       },
     },
   },

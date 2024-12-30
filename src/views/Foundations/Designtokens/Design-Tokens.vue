@@ -23,7 +23,7 @@
                                 <img src="./dataimg/design-tokens-1.jpg" alt="">
                             </div>
                         </section>
-                        <div class="actbtn flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-md mt-8">
+                        <a href="/VSDS-site/#/Foundations/Designtokens/Foundation-tokens" class="actbtn flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-md mt-8">
                             <div class="icon">
                                 <img src="/src/assets/images/icons/head.svg" alt="">
                             </div>
@@ -31,7 +31,7 @@
                                 <span class="text-sm text-on-surface">Foundation tokens</span>
                                 <p class="text-xs text-on-surface-variant mt-2">Overview of all foundation token items</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="article-section mt-20" id="alias-tokens">
                         <copyTitle>
@@ -45,7 +45,7 @@
                                 <img src="./dataimg/design-tokens-2.jpg" alt="">
                             </div>
                         </section>
-                        <div class="actbtn flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-md mt-8">
+                        <a href="/VSDS-site/#/Foundations/Designtokens/Alias-tokens" class="actbtn flex px-4 py-4 border border-outline rounded-xl gap-3 shadow-md mt-8">
                             <div class="icon">
                                 <img src="/src/assets/images/icons/head.svg" alt="">
                             </div>
@@ -53,7 +53,7 @@
                                 <span class="text-sm text-on-surface">Alias tokens</span>
                                 <p class="text-xs text-on-surface-variant mt-2">Overview of all alias token items</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
