@@ -152,19 +152,19 @@
                 <h5 class="text-[10px] text-on-surface-variant mb-8">On this page</h5>
                 <ul>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#accessibility-design-principle' }">Accessibility design
+                        <router-link class="content-nav" :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#accessibility-design-principle' }">Accessibility design
                             principle</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#common-accessibility-design-aspects' }">Common accessibility design
+                        <router-link class="content-nav" :class="{ current: activeIndex === 1 }" @click="contentActive(1)" :to="{hash: '#common-accessibility-design-aspects' }">Common accessibility design
                             aspects</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#visual-impairment-users' }">Visual impairment users Dyslexic,
+                        <router-link class="content-nav" :class="{ current: activeIndex === 2 }" @click="contentActive(2)" :to="{hash: '#visual-impairment-users' }">Visual impairment users Dyslexic,
                             Learning/Cognitive users</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#accessibility-testing' }">Accessibility testing</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 3 }" @click="contentActive(3)" :to="{hash: '#accessibility-testing' }">Accessibility testing</router-link>
                     </li>
                 </ul>
             </div>
@@ -178,6 +178,10 @@ import SectionTitle from '/src/layouts/SectionTitle/SectionTitle.vue'
 import copyTitle from '/src/components/copyTitle/copyTitle.vue'
 import { useRouter } from 'vue-router';
 const router = useRouter();
-
+import { ref } from "vue";
+const activeIndex = ref(null);
+const contentActive = (index) => {
+  activeIndex.value = index;
+};
 
 </script>

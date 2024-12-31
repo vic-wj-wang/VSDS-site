@@ -60,10 +60,10 @@
             <ContentElm>
                 <ul>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#foundation-tokens' }">Foundation tokens</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#foundation-tokens' }">Foundation tokens</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#alias-tokens' }">Alias tokens</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 1 }" @click="contentActive(1)" :to="{hash: '#alias-tokens' }">Alias tokens</router-link>
                     </li>
                 </ul>
             </ContentElm>
@@ -78,6 +78,10 @@ import copyTitle from '/src/components/copyTitle/copyTitle.vue'
 import ContentElm from '/src/layouts/ContentElm/ContentElm.vue'
 import { useRouter } from 'vue-router';
 const router = useRouter();
-
+import { ref } from "vue";
+const activeIndex = ref(null);
+const contentActive = (index) => {
+  activeIndex.value = index;
+};
 
 </script>

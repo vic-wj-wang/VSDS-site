@@ -37,7 +37,6 @@ watch(() => route.hash, (newHash) => {
 <style lang="scss">
 html {
 	scroll-behavior: smooth;
-
 	.noscroller {
 		overflow: hidden;
 	}

@@ -26,19 +26,19 @@ const router = createRouter({
     history: createWebHashHistory(import.meta.env.BASE_URL),
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
-            return savedPosition;
+            return { left: 0, top: savedPosition.top + 56 };
         }
         if (to.hash) {
             return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve({
-                        el: to.hash,
-                        behavior: 'smooth',
-                    });
-                }, 500);
+                const element = document.querySelector(to.hash);
+                if (element) {
+                    const offsetTop = element.getBoundingClientRect().top + window.scrollY - 56;
+                    resolve({ left: 0, top: offsetTop });
+                } else {
+                    resolve({ top: 0, behavior: 'smooth' });
+                }
             });
         }
-
         return { top: 0, behavior: 'smooth' };
     },
     routes: [

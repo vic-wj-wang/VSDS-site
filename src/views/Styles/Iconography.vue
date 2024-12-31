@@ -157,25 +157,25 @@
             <ContentElm>
                 <ul>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#overview' }">Overview</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#overview' }">Overview</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#theme' }">Theme</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 1 }" @click="contentActive(1)" :to="{hash: '#theme' }">Theme</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#optical-sizes' }">Optical sizes</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 2 }" @click="contentActive(2)" :to="{hash: '#optical-sizes' }">Optical sizes</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#design-principle' }">Design Principle</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 3 }" @click="contentActive(3)" :to="{hash: '#design-principle' }">Design Principle</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#best-practices' }">Best practices</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 4 }" @click="contentActive(4)" :to="{hash: '#best-practices' }">Best practices</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#icon-naming-convention' }">Icon Naming Convention</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 5 }" @click="contentActive(5)" :to="{hash: '#icon-naming-convention' }">Icon Naming Convention</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#localization' }">Localization</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 6 }" @click="contentActive(6)" :to="{hash: '#localization' }">Localization</router-link>
                     </li>
                 </ul>
             </ContentElm>
@@ -190,6 +190,10 @@ import copyTitle from '/src/components/copyTitle/copyTitle.vue'
 import ContentElm from '/src/layouts/ContentElm/ContentElm.vue'
 import { useRouter } from 'vue-router';
 const router = useRouter();
-
+import { ref } from "vue";
+const activeIndex = ref(null);
+const contentActive = (index) => {
+  activeIndex.value = index;
+};
 
 </script>

@@ -9,7 +9,7 @@
                 <div class="article--main pb-14">
                     <section>
                         <div class="font-bold text-on-surface">Essential Accessibility Features for EdTech Products:</div>
-                        <p>The following content outlines the essential accessibility features that educational products must include to comply with U.S. legal requirements and ensure that all students, particularly those with disabilities, can fully engage with the material. These features aren’t merely guidelines—they are mandated by laws such as the <span class="font-bold">ADA, Section 504</span>, and <span class="font-bold">IDEA</span>.</p>
+                        <p>The following content outlines the essential accessibility features that educational products must include to comply with U.S. legal requirements and ensure that all students, particularly those with disabilities, can fully engage with the material. These features aren’t merely guidelines—they are mandated by laws such as the <span class="font-bold">ADA</span>, <span class="font-bold">Section 504</span>, and <span class="font-bold">IDEA</span>.</p>
                         <p>For web-based products, many features—like zoom controls and keyboard navigation—are already built into browsers. However, certain accessibility features need to be directly integrated into the product itself to ensure full compliance and provide an inclusive learning experience.</p>
                     </section>
                     <div class="article-section mt-20">
@@ -584,7 +584,7 @@
             <ContentElm>
                 <ul>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#accessibility-checklist' }">Accessibility checklist</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#accessibility-checklist' }">Accessibility checklist</router-link>
                     </li>
                 </ul>
             </ContentElm>
@@ -624,7 +624,10 @@ onMounted(() => {
   filterCategories('All');
   selectedFilterText.value = "Tips"
 });
-
+const activeIndex = ref(null);
+const contentActive = (index) => {
+  activeIndex.value = index;
+};
 
 </script>
 <style scoped>

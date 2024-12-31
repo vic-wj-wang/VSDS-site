@@ -143,22 +143,22 @@
             <ContentElm>
                 <ul>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#foundation-colors' }">Foundation colors</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#foundation-colors' }">Foundation colors</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#neutral-colors' }">Neutral colors</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 1 }" @click="contentActive(1)" :to="{hash: '#neutral-colors' }">Neutral colors</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#segment-colors' }">Segment colors</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 2 }" @click="contentActive(2)" :to="{hash: '#segment-colors' }">Segment colors</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#semantic-colors' }">Semantic colors</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 3 }" @click="contentActive(3)" :to="{hash: '#semantic-colors' }">Semantic colors</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#accessibility' }">Accessibility</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 4 }" @click="contentActive(4)" :to="{hash: '#accessibility' }">Accessibility</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#color-tokens' }">Color tokens</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 5 }" @click="contentActive(5)" :to="{hash: '#color-tokens' }">Color tokens</router-link>
                     </li>
                 </ul>
             </ContentElm>
@@ -173,6 +173,10 @@ import copyTitle from '/src/components/copyTitle/copyTitle.vue'
 import ContentElm from '/src/layouts/ContentElm/ContentElm.vue'
 import { useRouter } from 'vue-router';
 const router = useRouter();
-
+import { ref } from "vue";
+const activeIndex = ref(null);
+const contentActive = (index) => {
+  activeIndex.value = index;
+};
 
 </script>

@@ -1,27 +1,3 @@
-<script setup>
-import { ref, watch } from "vue";
-import logoIcon from "@/assets/images/logo-vs.svg";
-const isActive = ref(false);
-const isActiveMnav = ref(false);
-function toggleMenu(status) {
-	isActiveMnav.value = !isActiveMnav.value;
-}
-const activeParent = ref(null);
-function toggleParent(index) {
-	activeParent.value = activeParent.value === index ? null : index;
-}
-function setActive(index) {
-	//   console.log(`Child in Parent ${index + 1} clicked`);
-	isActive.value = !isActive.value;
-	isActiveMnav.value = false;
-}
-watch(isActiveMnav, (newValue) => {
-	const action = newValue ? 'add' : 'remove';
-	document.documentElement.classList[action]('noscroller'); // 修改 <html> 的 class
-	document.body.classList[action]('noscroller');           // 修改 <body> 的 class
-});
-</script>
-
 <template>
 	<div class="mobile-header bg-vsds-color-neutral-1000 fixed top-0 left-0 w-[100vw] h-16 flex pl-4 pr-4 items-center justify-between lg:hidden z-40">
 		<div class="overlay w-[0] h-[100vh] bg-black bg-opacity-80 fixed top-0 left-0 lg:hidden" @click="toggleMenu" :class="{ active: isActiveMnav }"></div>
@@ -49,30 +25,35 @@ watch(isActiveMnav, (newValue) => {
 		</div>
 		<div class="version border border-outline-variant rounded-full px-3 py-1 text-on-surface-variant text-xs">v1.0</div>
 	</div>
-	<div class="navigation fixed w-11/12 max-w-[615px] h-[100vh] left-[-615px] box-border shrink-0 transition lg:block lg:w-[240px] lg:sticky top-0 bg-surface-100 pt-14 pr-9 pb-16 pl-8 active:left-0 z-50" :class="{ active: isActiveMnav }">
+	<div class="navigation fixed w-11/12 max-w-[615px] h-[100vh] left-[-615px] box-border shrink-0 transition flex flex-col justify-start lg:w-[240px] lg:sticky top-0 bg-surface-100 pt-14 pr-9 pb-16 pl-8 active:left-0 z-50" :class="{ active: isActiveMnav }">
 		<div class="logo mb-8" width="172">
 			<RouterLink :to="{ name: 'home', params: {} }" @click="toggleParent(null)">
 				<img :src="logoIcon" alt="" class="block w-full max-w-[172px]" />
 			</RouterLink>
 		</div>
-		<img src="../../assets/images/icon-nav-divider.svg" alt="" class="divider mb-8">
-		<div>
-			<nav class="menu">
+		<img src="../../assets/images/icon-nav-divider.svg" alt="" class="divider mb-8 w-[10px] h-[15px]">
+		<div class="flex-grow flex flex-col justify-between items-start overflow-auto">
+			<nav class="menu w-full">
 				<ul class="pl-0 list-none">
 					<li>
 						<div class="nav-main">
-							<div class="nav-main--item flex items-center justify-between mb-3">
-								<router-link :to="{ name: 'GetStart-Overview'}" class="nav-main--item text-base font-bold text-neutral-50" @click="toggleParent(0)">Get started</router-link>
-								<div class="icon">
-									<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" class="fill-white" clip-rule="evenodd" d="M0.362254 0.902782C0.101905 1.16313 0.101905 1.58524 0.362254 1.84559L4.52892 6.01226C4.78927 6.27261 5.21138 6.27261 5.47173 6.01226L9.6384 1.84559C9.89875 1.58524 9.89875 1.16313 9.6384 0.902782C9.37805 0.642433 8.95594 0.642433 8.69559 0.902782L5.00033 4.59804L1.30506 0.902782C1.04471 0.642432 0.622604 0.642432 0.362254 0.902782Z" fill="#333333"/></svg>
-								</div>
+							<div class="flex items-center justify-between mb-3">
+								<router-link :to="{ name: ''}" class="nav-main--item" @click="toggleNav('nav1')">
+									<span>Get started</span>
+									<div class="icon">
+										<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" class="fill-white" clip-rule="evenodd" d="M0.362254 0.902782C0.101905 1.16313 0.101905 1.58524 0.362254 1.84559L4.52892 6.01226C4.78927 6.27261 5.21138 6.27261 5.47173 6.01226L9.6384 1.84559C9.89875 1.58524 9.89875 1.16313 9.6384 0.902782C9.37805 0.642433 8.95594 0.642433 8.69559 0.902782L5.00033 4.59804L1.30506 0.902782C1.04471 0.642432 0.622604 0.642432 0.362254 0.902782Z" fill="#333333"/></svg>
+									</div>
+								</router-link>
+								
 							</div>
 							<transition name="expand">
-								<div class="nav-sub" v-if="activeParent === 0">
-									<router-link :to="{ name: 'GetStart-Overview', params: {} }" class="nav-sub--item block text-sm text-on-surface-variant" activeClass="font-bold !text-link" :class="{ active: activeParent === 0 }" @click="setActive(0)">Overview</router-link>
-									<div class="nav-tri mt-2 pl-3">
-										<router-link :to="{ name: 'GetStart-Overview', params: {} }" class="nav-sub--item block mb-2 text-xs text-on-surface-variant" activeClass="!text-link" @click="setActive(0)">Overview</router-link>
-									</div>
+								<div class="nav-sub" v-if="activeNavs.has('nav1')">
+									<router-link :to="{ name: 'GetStart-Overview', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav1-1')" :class="{ active: activeSubNav === 'nav1-1' }">Overview</router-link>
+									<transition name="expand">
+										<div class="nav-tri mt-2 pl-3" v-if="activeSubNav === 'nav1-1'">
+											<router-link :to="{ name: 'GetStart-Overview', params: {} }" class="nav-tri--item" activeClass="!text-link font-bold">Overview</router-link>
+										</div>
+									</transition>
 								</div>
 							</transition>
 						</div>
@@ -80,40 +61,46 @@ watch(isActiveMnav, (newValue) => {
 					</li>
 					<li>
 						<div class="nav-main">
-							<div class="nav-main--item flex items-center justify-between mb-3">
-								<router-link :to="{ name: 'AccessibilityOverview'}" class="nav-main--item text-base font-bold text-neutral-50" @click="toggleParent(1)">Fundation</router-link>
-								<div class="icon">
-									<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" class="fill-white" clip-rule="evenodd" d="M0.362254 0.902782C0.101905 1.16313 0.101905 1.58524 0.362254 1.84559L4.52892 6.01226C4.78927 6.27261 5.21138 6.27261 5.47173 6.01226L9.6384 1.84559C9.89875 1.58524 9.89875 1.16313 9.6384 0.902782C9.37805 0.642433 8.95594 0.642433 8.69559 0.902782L5.00033 4.59804L1.30506 0.902782C1.04471 0.642432 0.622604 0.642432 0.362254 0.902782Z" fill="#333333"/></svg>
-								</div>
+							<div class="flex items-center justify-between mb-3">
+								<router-link :to="{ name: ''}" class="nav-main--item" @click="toggleNav('nav2')">
+									<span>Fundation</span>
+									<div class="icon">
+										<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" class="fill-white" clip-rule="evenodd" d="M0.362254 0.902782C0.101905 1.16313 0.101905 1.58524 0.362254 1.84559L4.52892 6.01226C4.78927 6.27261 5.21138 6.27261 5.47173 6.01226L9.6384 1.84559C9.89875 1.58524 9.89875 1.16313 9.6384 0.902782C9.37805 0.642433 8.95594 0.642433 8.69559 0.902782L5.00033 4.59804L1.30506 0.902782C1.04471 0.642432 0.622604 0.642432 0.362254 0.902782Z" fill="#333333"/></svg>
+									</div>
+								</router-link>
 							</div>
 							<transition name="expand">
-								<div class="nav-sub" v-if="activeParent === 1">
-									<router-link :to="{ name: 'AccessibilityOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 1 }" @click="setActive(1)">Accessibility</router-link>
-									<div class="nav-tri mt-2 pl-3 ">
-										<router-link :to="{ name: 'AccessibilityOverview', params: {} }" class="text-on-surface-variant block mb-2 text-xs" activeClass="!text-link font-bold" @click="setActive(1)">Overview</router-link>
-										<router-link :to="{ name: 'AccessibilityChecklist', params: {} }" class="text-on-surface-variant block mb-2 text-xs" activeClass="!text-link font-bold" @click="setActive(1)">Checklist</router-link>
-										<router-link :to="{ name: 'AccessibilityDesigningColorTypography', params: {} }" class="text-on-surface-variant block mb-2 text-xs" activeClass="!text-link font-bold" @click="setActive(1)">Designing</router-link>
-									</div>
+								<div class="nav-sub" v-if="activeNavs.has('nav2')">
+									<router-link :to="{ name: 'AccessibilityOverview', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav2-1')" :class="{ active: activeSubNav === 'nav2-1'}">Accessibility</router-link>
+									<transition name="expand">
+										<div class="nav-tri mt-2 pl-3" v-if="activeSubNav === 'nav2-1'">
+											<router-link :to="{ name: 'AccessibilityOverview', params: {} }" class="nav-tri--item" activeClass="!text-link font-bold">Overview</router-link>
+											<router-link :to="{ name: 'AccessibilityChecklist', params: {} }" class="nav-tri--item" activeClass="!text-link font-bold">Checklist</router-link>
+											<router-link :to="{ name: 'AccessibilityDesigningColorTypography', params: {} }" class="nav-tri--item" activeClass="!text-link font-bold">Designing</router-link>
+										</div>
+									</transition>
 								</div>
 							</transition>
-							<transition>
-								<div class="nav-sub" v-if="activeParent === 1">
-									<router-link :to="{ name: 'DesignTokensOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold" :class="{ active: activeParent === 1 }" @click="setActive(1)">Design tokens</router-link>
-									<div class="nav-tri mt-2 pl-3 ">
-										<router-link :to="{ name: 'DesignTokensOverview', params: {} }" class="text-on-surface-variant block mb-2 text-xs">Overview</router-link>
-										<router-link :to="{ name: 'DesignTokensFoundationTokens', params: {} }" class="text-on-surface-variant block mb-2 text-xs">Foundation tokens</router-link>
-										<router-link :to="{ name: 'DesignTokensAliasTokens', params: {} }" class="text-on-surface-variant block mb-2 text-xs">Alias tokens</router-link>
-									</div>
+							<transition name="expand">
+								<div class="nav-sub" v-if="activeNavs.has('nav2')">
+									<router-link :to="{ name: 'DesignTokensOverview', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav2-2')" :class="{ active: activeSubNav === 'nav2-2'}">Design tokens</router-link>
+									<transition name="expand">
+										<div class="nav-tri mt-2 pl-3" v-if="activeSubNav === 'nav2-2'">
+											<router-link :to="{ name: 'DesignTokensOverview', params: {} }" class="nav-tri--item" activeClass="!text-link font-bold">Overview</router-link>
+											<router-link :to="{ name: 'DesignTokensFoundationTokens', params: {} }" class="nav-tri--item" activeClass="!text-link font-bold">Foundation tokens</router-link>
+											<router-link :to="{ name: 'DesignTokensAliasTokens', params: {} }" class="nav-tri--item" activeClass="!text-link font-bold">Alias tokens</router-link>
+										</div>
+									</transition>
 								</div>
 							</transition>
-							<transition>
-								<div class="nav-sub" v-if="activeParent === 1">
-									<router-link :to="{ name: 'Themes', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold" :class="{ active: activeParent === 1 }" @click="setActive(1)">Themes</router-link>
+							<transition name="expand">
+								<div class="nav-sub" v-if="activeNavs.has('nav2')">
+									<router-link :to="{ name: 'Themes', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav2-3')" :class="{ active: activeSubNav === 'nav2-3'}">Themes</router-link>
 								</div>
 							</transition>
-							<transition>
-								<div class="nav-sub" v-if="activeParent === 1">
-									<router-link :to="{ name: 'Interaction', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold" :class="{ active: activeParent === 1 }" @click="setActive(1)">Interaction</router-link>
+							<transition name="expand">
+								<div class="nav-sub" v-if="activeNavs.has('nav2')">
+									<router-link :to="{ name: 'Interaction', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav2-4')" :class="{ active: activeSubNav === 'nav2-4'}">Interaction</router-link>
 								</div>
 							</transition>
 						</div>
@@ -121,67 +108,144 @@ watch(isActiveMnav, (newValue) => {
 					</li>
 					<li>
 						<div class="nav-main">
-							<div class="nav-main--item flex items-center justify-between mb-3">
-								<router-link :to="{ name: 'StylesOverview'}" class="nav-main--item text-base font-bold text-neutral-50" @click="toggleParent(2)">Styles</router-link>
-								<div class="icon">
-									<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" class="fill-white" clip-rule="evenodd" d="M0.362254 0.902782C0.101905 1.16313 0.101905 1.58524 0.362254 1.84559L4.52892 6.01226C4.78927 6.27261 5.21138 6.27261 5.47173 6.01226L9.6384 1.84559C9.89875 1.58524 9.89875 1.16313 9.6384 0.902782C9.37805 0.642433 8.95594 0.642433 8.69559 0.902782L5.00033 4.59804L1.30506 0.902782C1.04471 0.642432 0.622604 0.642432 0.362254 0.902782Z" fill="#333333"/></svg>
-								</div>
+							<div class="flex items-center justify-between mb-3">
+								<router-link :to="{ name: ''}" class="nav-main--item" @click="toggleNav('nav3')">
+									<span>Styles</span>
+									<div class="icon">
+										<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" class="fill-white" clip-rule="evenodd" d="M0.362254 0.902782C0.101905 1.16313 0.101905 1.58524 0.362254 1.84559L4.52892 6.01226C4.78927 6.27261 5.21138 6.27261 5.47173 6.01226L9.6384 1.84559C9.89875 1.58524 9.89875 1.16313 9.6384 0.902782C9.37805 0.642433 8.95594 0.642433 8.69559 0.902782L5.00033 4.59804L1.30506 0.902782C1.04471 0.642432 0.622604 0.642432 0.362254 0.902782Z" fill="#333333"/></svg>
+									</div>
+								</router-link>
 							</div>
 							<transition name="expand">
-								<div class="nav-sub" v-if="activeParent === 2">
-									<router-link :to="{ name: 'StylesOverview', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Overview</router-link>
-									<router-link :to="{ name: 'StylesColor', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Color</router-link>
-									<router-link :to="{ name: 'StylesElevation', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Elevation</router-link>
-									<router-link :to="{ name: 'StylesIconography', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Iconography</router-link>
-									<router-link :to="{ name: 'StylesLayout', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Layout</router-link>
-									<router-link :to="{ name: 'StylesTypography', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 2 }" @click="setActive(2)">Typography</router-link>
+								<div class="nav-sub" v-if="activeNavs.has('nav3')">
+									<router-link :to="{ name: 'StylesOverview', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav3-1')" :class="{ active: activeSubNav === 'nav3-1'}">Overview</router-link>
+								</div>
+							</transition>
+							<transition name="expand">
+								<div class="nav-sub" v-if="activeNavs.has('nav3')">
+									<router-link :to="{ name: 'StylesColor', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav3-2')" :class="{ active: activeSubNav === 'nav3-2'}">Color</router-link>
+								</div>
+							</transition>
+							<transition name="expand">
+								<div class="nav-sub" v-if="activeNavs.has('nav3')">
+									<router-link :to="{ name: 'StylesElevation', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav3-3')" :class="{ active: activeSubNav === 'nav3-3'}">Elevation</router-link>
+								</div>
+							</transition>
+							<transition name="expand">
+								<div class="nav-sub" v-if="activeNavs.has('nav3')">
+									<router-link :to="{ name: 'StylesIconography', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav3-4')" :class="{ active: activeSubNav === 'nav3-4'}">Iconography</router-link>
+								</div>
+							</transition>
+							<transition name="expand">
+								<div class="nav-sub" v-if="activeNavs.has('nav3')">
+									<router-link :to="{ name: 'StylesLayout', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav3-5')" :class="{ active: activeSubNav === 'nav3-5'}">Layout</router-link>
+								</div>
+							</transition>
+							<transition name="expand">
+								<div class="nav-sub" v-if="activeNavs.has('nav3')">
+									<router-link :to="{ name: 'StylesTypography', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav3-6')" :class="{ active: activeSubNav === 'nav3-6'}">Typography</router-link>
 								</div>
 							</transition>
 						</div>
 					</li>
 					<li>
 						<div class="nav-main">
-							<div class="nav-main--item flex items-center justify-between mb-3">
-								<router-link :to="{ name: 'ComponentsDesignKit'}" class="nav-main--item text-base font-bold text-neutral-50" @click="toggleParent(3)">Components</router-link>
-								<div class="icon">
-									<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" class="fill-white" clip-rule="evenodd" d="M0.362254 0.902782C0.101905 1.16313 0.101905 1.58524 0.362254 1.84559L4.52892 6.01226C4.78927 6.27261 5.21138 6.27261 5.47173 6.01226L9.6384 1.84559C9.89875 1.58524 9.89875 1.16313 9.6384 0.902782C9.37805 0.642433 8.95594 0.642433 8.69559 0.902782L5.00033 4.59804L1.30506 0.902782C1.04471 0.642432 0.622604 0.642432 0.362254 0.902782Z" fill="#333333"/></svg>
-								</div>
+							<div class="flex items-center justify-between mb-3">
+								<router-link :to="{ name: ''}" class="nav-main--item" @click="toggleNav('nav4')">
+									<span>Components</span>
+									<div class="icon">
+										<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" class="fill-white" clip-rule="evenodd" d="M0.362254 0.902782C0.101905 1.16313 0.101905 1.58524 0.362254 1.84559L4.52892 6.01226C4.78927 6.27261 5.21138 6.27261 5.47173 6.01226L9.6384 1.84559C9.89875 1.58524 9.89875 1.16313 9.6384 0.902782C9.37805 0.642433 8.95594 0.642433 8.69559 0.902782L5.00033 4.59804L1.30506 0.902782C1.04471 0.642432 0.622604 0.642432 0.362254 0.902782Z" fill="#333333"/></svg>
+									</div>
+								</router-link>
 							</div>
 							<transition name="expand">
-								<div class="nav-sub" v-if="activeParent === 3">
-									<router-link :to="{ name: 'ComponentsDesignKit', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 3 }" @click="setActive(3)">Design Kit</router-link>
-									<router-link :to="{ name: 'ComponentsModularComponents', params: {} }" class="block text-sm text-on-surface-inverse" activeClass="font-bold text-link" :class="{ active: activeParent === 3 }" @click="setActive(3)">Modular components</router-link>
+								<div class="nav-sub" v-if="activeNavs.has('nav4')">
+									<router-link :to="{ name: 'ComponentsDesignKit', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav4-1')" :class="{ active: activeSubNav === 'nav4-1'}">Design Kit</router-link>
+								</div>
+							</transition>
+							<transition name="expand">
+								<div class="nav-sub" v-if="activeNavs.has('nav4')">
+									<router-link :to="{ name: 'ComponentsModularComponents', params: {} }" class="nav-sub--item" @click="toggleSubNav('nav4-2')" :class="{ active: activeSubNav === 'nav4-2'}">Modular components</router-link>
 								</div>
 							</transition>
 						</div>
 					</li>
 				</ul>
 			</nav>
+			<div class="version inline-block border border-outline-variant rounded-full px-3 py-1 text-on-surface-variant text-xs">v1.0</div>
 		</div>
 	</div>
 </template>
 
+<script setup>
+import { ref, watch } from "vue";
+import logoIcon from "@/assets/images/logo-vs.svg";
+const isActive = ref(false);
+const isActiveMnav = ref(false);
+const activeParent = ref(null);
 
+
+
+function toggleParent(index) {
+	activeParent.value = index;
+	console.log("parent index = "+index)
+}
+
+// 第一層的活動狀態
+const activeNavs = ref(new Set());
+
+// 第二層的活動狀態
+const activeSubNav = ref(null);
+
+// 切換第一層選單
+const toggleNav = (index) => {
+	console.log("first name = "+index);
+	if (activeNavs.value.has(index)) {
+		// 如果該選單已經開啟，則關閉
+		activeNavs.value.delete(index);
+	} else {
+		// 如果該選單尚未開啟，則開啟
+		activeNavs.value.add(index);
+	}
+};
+
+// 切換第二層選單
+const toggleSubNav = (index) => {
+	console.log("sub name = "+index);
+  activeSubNav.value = activeSubNav.value === index ? null : index;
+};
+
+// ham 開關
+function toggleMenu(status) {
+	isActiveMnav.value = !isActiveMnav.value;
+}
+watch(isActiveMnav, (newValue) => {
+	const action = newValue ? 'add' : 'remove';
+	document.documentElement.classList[action]('noscroller'); // 修改 <html> 的 class
+	document.body.classList[action]('noscroller');           // 修改 <body> 的 class
+});
+</script>
 
 <style lang="scss" scoped>
 .active {
   font-weight: bold;
-  color: #5d80ed;
+  color: #3C5AAA;
 }
 .expand-enter-active,
 .expand-leave-active {
-  transition: max-height 0.5s ease, opacity 0.5s ease;
+  transition: max-height 0.5s linear, opacity 0.5s linear;
 }
 
 .expand-enter-from,
 .expand-leave-to {
   max-height: 0;
   opacity: 0;
+  
 }
 
 .expand-enter-to,
 .expand-leave-from {
-  max-height: 100px; /* Adjust to your content's max height */
+  max-height: 100px;
   opacity: 1;
 }
 .overlay{

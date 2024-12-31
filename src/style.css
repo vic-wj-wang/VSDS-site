@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body{
-    @apply text-on-surface text-sm
+    @apply text-on-surface text-sm bg-vsds-color-neutral-0;
 }
 p{
     @apply mt-4 text-on-surface text-sm
@@ -18,6 +18,21 @@ main{
 }
 ul{
     @apply text-on-surface list-disc pl-4
+}
+.nav-main .nav-sub:last-child{
+    @apply mb-6
+}
+.nav-main--item{
+    @apply flex justify-between w-full items-center text-base font-bold text-neutral-50
+}
+.nav-sub{
+    @apply block text-sm text-on-surface-variant mb-2 hover:font-bold hover:text-link
+}
+.nav-sub--item{
+    @apply block w-full hover:text-link
+}
+.nav-tri--item{
+    @apply block mb-2 text-xs text-on-surface-variant hover:text-link
 }
 @layer components{
     h2{
@@ -32,11 +47,14 @@ ul{
     .content-nav{
         @apply block text-on-surface-variant hover:text-on-surface duration-300 text-xs
     }
+    .content-nav.current{
+        @apply text-on-surface
+    }
     .contentlist ul{
         @apply pl-0 list-none
     }
     .tabbox-item{
-        @apply text-xs text-on-surface px-4 py-3 rounded-2xl lg:text-sm lg:rounded-full lg:px-12 lg:py-5 hover:bg-slate-100 duration-300 shrink-0
+        @apply text-xs text-on-surface px-8 py-4 rounded-full lg:text-sm lg:px-12 lg:py-5 hover:bg-slate-100 duration-300 shrink-0
     }
     .tabbox-item.active{
         @apply bg-slate-100

@@ -1,18 +1,20 @@
 <template>
-    <main class="grow">
+    <main class="grow overflow-x-auto">
         <Herobanner>
             <template #pageTitle>Designing</template>
             <template #pageBrief>In software or web design it involves incorporating design principles and techniques that ensure equal access, usability, and inclusion for all users, regardless of their abilities.</template>
         </Herobanner>
-        <div class="tabbox bg-neutral-100 rounded-full mt-16 mx-6 lg:mx-20 overflow-x-auto shadow-md">
-            <div class="tabbox-wrapper inline-flex flex-nowrap">
-                <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningColorTypography'}">Color & Typography</RouterLink>
-                <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningLayoutNavigation'}">Layout & Navigation</RouterLink>
-                <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningLinksButtons'}">Links & Buttons</RouterLink>
-                <RouterLink class="tabbox-item active" :to="{ name: 'AccessibilityFormsControlsDycontents'}">Forms, Controls, Dynamic Content</RouterLink>
+        <div class="overflow-x-auto pb-2">
+            <div class="tabbox bg-neutral-100 rounded-full mt-8 lg:mt-16 mx-6 lg:mx-20 overflow-x-auto shadow-md">
+                <div class="tabbox-wrapper inline-flex flex-nowrap">
+                    <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningColorTypography'}">Color & Typography</RouterLink>
+                    <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningLayoutNavigation'}">Layout & Navigation</RouterLink>
+                    <RouterLink class="tabbox-item" :to="{ name: 'AccessibilityDesigningLinksButtons'}">Links & Buttons</RouterLink>
+                    <RouterLink class="tabbox-item active" :to="{ name: 'AccessibilityFormsControlsDycontents'}">Forms, Controls, Dynamic Content</RouterLink>
+                </div>
             </div>
         </div>
-        <div class="article flex mt-16 px-6 lg:px-20 box-border gap-10">
+        <div class="article flex mt-6 lg:mt-16 px-6 lg:px-20 box-border gap-10">
             <div class="mainbox w-full">
                 <div class="article--main pb-14">
                     <div class="article-section" id="forms-controls-dynamic-content">
@@ -68,10 +70,10 @@
             <ContentElm>
                 <ul>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#accessibility-design-forms-controls' }">Forms & Controls</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#accessibility-design-forms-controls' }">Forms & Controls</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#accessibility-design-dynamic-content' }">Dynamic Content</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 1 }" @click="contentActive(1)" :to="{hash: '#accessibility-design-dynamic-content' }">Dynamic Content</router-link>
                     </li>
                 </ul>
             </ContentElm>
@@ -86,6 +88,11 @@ import copyTitle from '/src/components/copyTitle/copyTitle.vue'
 import ContentElm from '/src/layouts/ContentElm/ContentElm.vue'
 import { useRouter } from 'vue-router';
 const router = useRouter();
+import { ref } from "vue";
+const activeIndex = ref(null);
+const contentActive = (index) => {
+  activeIndex.value = index;
+};
 
 
 </script>

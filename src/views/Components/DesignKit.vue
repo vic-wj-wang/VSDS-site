@@ -85,13 +85,13 @@
             <ContentElm>
                 <ul>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#vsds-in-figma' }">VSDS in Figma</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#vsds-in-figma' }">VSDS in Figma</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#design-kit-organization' }">Design kit organization</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 1 }" @click="contentActive(1)" :to="{hash: '#design-kit-organization' }">Design kit organization</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :to="{hash: '#enabling-the-libraries' }">Enabling the libraries</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 2 }" @click="contentActive(2)" :to="{hash: '#enabling-the-libraries' }">Enabling the libraries</router-link>
                     </li>
                 </ul>
             </ContentElm>
@@ -106,6 +106,10 @@ import copyTitle from '/src/components/copyTitle/copyTitle.vue'
 import ContentElm from '/src/layouts/ContentElm/ContentElm.vue'
 import { useRouter } from 'vue-router';
 const router = useRouter();
-
+import { ref } from "vue";
+const activeIndex = ref(null);
+const contentActive = (index) => {
+  activeIndex.value = index;
+};
 
 </script>
