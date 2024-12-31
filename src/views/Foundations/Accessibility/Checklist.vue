@@ -612,7 +612,7 @@ const filterCategories = (command) => {
     });
   categories.forEach((category) => {
     const type = category.getAttribute('data-type');
-    console.log(type);
+    // console.log(type);
     if (command === 'All' || type.split(' ').includes(command)) {
       category.classList.remove('hidden');
     } else {

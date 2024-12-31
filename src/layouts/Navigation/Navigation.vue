@@ -184,34 +184,22 @@ const isActive = ref(false);
 const isActiveMnav = ref(false);
 const activeParent = ref(null);
 
-
-
 function toggleParent(index) {
 	activeParent.value = index;
-	console.log("parent index = "+index)
+	// console.log("parent index = "+index)
 }
-
-// 第一層的活動狀態
 const activeNavs = ref(new Set());
-
-// 第二層的活動狀態
 const activeSubNav = ref(null);
-
-// 切換第一層選單
 const toggleNav = (index) => {
-	console.log("first name = "+index);
+	// console.log("first name = "+index);
 	if (activeNavs.value.has(index)) {
-		// 如果該選單已經開啟，則關閉
 		activeNavs.value.delete(index);
 	} else {
-		// 如果該選單尚未開啟，則開啟
 		activeNavs.value.add(index);
 	}
 };
-
-// 切換第二層選單
 const toggleSubNav = (index) => {
-	console.log("sub name = "+index);
+	// console.log("sub name = "+index);
   activeSubNav.value = activeSubNav.value === index ? null : index;
 };
 
