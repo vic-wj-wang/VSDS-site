@@ -27,9 +27,12 @@
 	</div>
 	<div class="navigation fixed w-11/12 max-w-[615px] h-[100vh] left-[-615px] box-border shrink-0 transition flex flex-col justify-start lg:w-[240px] lg:sticky top-0 bg-surface-100 pt-14 pr-9 pb-16 pl-8 active:left-0 z-50" :class="{ active: isActiveMnav }">
 		<div class="logo mb-8" width="172">
-			<RouterLink :to="{ name: 'home', params: {} }" @click="toggleParent(null)">
+			<!-- <RouterLink :to="{  path: '/', params: {} }" @click="toggleParent(null)">
 				<img :src="logoIcon" alt="" class="block w-full max-w-[172px]" />
-			</RouterLink>
+			</RouterLink> -->
+			<a href="/">
+				<img :src="logoIcon" alt="" class="block w-full max-w-[172px]" />
+			</a>
 		</div>
 		<img src="../../assets/images/icon-nav-divider.svg" alt="" class="divider mb-8 w-[10px] h-[15px]">
 		<div class="flex-grow flex flex-col justify-between items-start overflow-auto">
@@ -197,7 +200,7 @@ function toggleParent(index) {
 const activeNavs = ref(new Set());
 const activeSubNav = ref(null);
 const toggleNav = (index) => {
-	console.log("first name = "+index);
+	// console.log("first name = "+index);
 	if (activeNavs.value.has(index)) {
 		activeNavs.value.delete(index);
 	} else {
@@ -205,7 +208,7 @@ const toggleNav = (index) => {
 	}
 };
 const toggleSubNav = (index) => {
-	console.log("sub name = "+index);
+	//console.log("sub name = "+index);
   	activeSubNav.value = activeSubNav.value === index ? null : index;
 };
 // ====== 根據網址展開
@@ -222,7 +225,6 @@ const setActiveNavFromRoute = (e) => {
     if (path.includes("/Accessibility")) {
       activeSubNav.value = "nav2-1";
 	  if(path.includes("/Designing")){
-		// e.classList.add("router-link-exact-active");
 		isNavTriActive.value = true;
 	  }else{
 		isNavTriActive.value = false;
@@ -262,13 +264,13 @@ const setActiveNavFromRoute = (e) => {
 watch(
   () => {
 	path = route.fullPath;
-	console.log(path +","+ activeNavs.value);
+	//console.log(path +","+ activeNavs.value);
 	// el = document.querySelector(".tabpage-Designing");
 	setActiveNavFromRoute();
 	nextTick(() => {
 		setTimeout(() => {
 			if (tabpageDesigning.value) {
-			console.log(tabpageDesigning);  // 這時候應該能夠正確訪問到 ref 元素
+			// console.log(tabpageDesigning);  // 這時候應該能夠正確訪問到 ref 元素
 			tabpageDesigning.value.classList.add("tabpageDesigning");
 			// setActiveNavFromRoute(tabpageDesigning);
 			}
