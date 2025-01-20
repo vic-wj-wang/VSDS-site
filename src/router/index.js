@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/GetStarted/Overview.vue'
-import GetStarted_Overview from '/src/views/GetStarted/Overview.vue'
+import GetStartedOverview from '/src/views/GetStarted/Overview.vue'
 import AccessibilityOverview from '/src/views/Foundations/Accessibility/Overview.vue'
 import AccessibilityChecklist from '/src/views/Foundations/Accessibility/Checklist.vue'
 import AccessibilityDesigningColorTypography from '/src/views/Foundations/Accessibility/Designing/Color-Typography.vue'
@@ -29,15 +28,11 @@ const router = createRouter({
             return { left: 0, top: savedPosition.top + 56 };
         }
         if (to.hash) {
-            return new Promise((resolve) => {
-                const element = document.querySelector(to.hash);
-                if (element) {
-                    const offsetTop = element.getBoundingClientRect().top + window.scrollY - 56;
-                    resolve({ left: 0, top: offsetTop });
-                } else {
-                    resolve({ top: 0, behavior: 'smooth' });
-                }
-            });
+            return {
+                el: to.hash, // 滾動到具有此 id 的元素
+                behavior: 'smooth', // 平滑滾動
+                top: 56 // 滾動到元素的頂部
+            };
         }
         return { top: 0, behavior: 'smooth' };
     },
@@ -45,12 +40,12 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: GetStarted_Overview,
+            component: GetStartedOverview,
         },
         {
             path: '/GetStarted/Overview',
             name: 'GetStart-Overview',
-            component: GetStarted_Overview,
+            component: GetStartedOverview,
         },
         {
             path: '/Foundations/Accessibility/Overview',

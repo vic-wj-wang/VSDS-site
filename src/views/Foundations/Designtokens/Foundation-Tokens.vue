@@ -1371,34 +1371,37 @@
             <ContentElm>
                 <ul>
                     <li class="mb-4">
-                        <router-link class="content-nav" :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#color' }">Color</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#naming-architecture' }">Naming architecture</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :class="{ current: activeIndex === 1 }" @click="contentActive(1)" :to="{hash: '#blur' }">Blur</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 1 }" @click="contentActive(1)" :to="{hash: '#color' }">Color</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :class="{ current: activeIndex === 2 }" @click="contentActive(2)" :to="{hash: '#border-width' }">Border width</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 2 }" @click="contentActive(2)" :to="{hash: '#blur' }">Blur</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :class="{ current: activeIndex === 3 }" @click="contentActive(3)" :to="{hash: '#device' }">Device</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 3 }" @click="contentActive(3)" :to="{hash: '#border-width' }">Border width</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :class="{ current: activeIndex === 4 }" @click="contentActive(4)" :to="{hash: '#icon' }">Icon</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 4 }" @click="contentActive(4)" :to="{hash: '#device' }">Device</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :class="{ current: activeIndex === 5 }" @click="contentActive(5)" :to="{hash: '#opacity' }">Opacity</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 5 }" @click="contentActive(5)" :to="{hash: '#icon' }">Icon</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :class="{ current: activeIndex === 6 }" @click="contentActive(6)" :to="{hash: '#radius' }">Radius</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 6 }" @click="contentActive(6)" :to="{hash: '#opacity' }">Opacity</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :class="{ current: activeIndex === 7 }" @click="contentActive(7)" :to="{hash: '#shadow' }">Shadow</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 7 }" @click="contentActive(7)" :to="{hash: '#radius' }">Radius</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :class="{ current: activeIndex === 8 }" @click="contentActive(8)" :to="{hash: '#spacing' }">Spacing</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 8 }" @click="contentActive(8)" :to="{hash: '#shadow' }">Shadow</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav" :class="{ current: activeIndex === 9 }" @click="contentActive(9)" :to="{hash: '#typography' }">Typography</router-link>
+                        <router-link class="content-nav" :class="{ current: activeIndex === 9 }" @click="contentActive(9)" :to="{hash: '#spacing' }">Spacing</router-link>
+                    </li>
+                    <li class="mb-4">
+                        <router-link class="content-nav" :class="{ current: activeIndex === 10 }" @click="contentActive(10)" :to="{hash: '#typography' }">Typography</router-link>
                     </li>
                 </ul>
             </ContentElm>

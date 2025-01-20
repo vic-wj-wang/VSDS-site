@@ -8,8 +8,18 @@ const scrollToHash = async (hash) => {
 	if (hash) {
 		await nextTick();
 		const target = document.querySelector(hash);
+		console.log("target = " + target.id);
 		if (target) {
-			target.scrollIntoView({ behavior: 'smooth' });
+			setTimeout(() => {
+				const headerOffset = 60;
+				const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+				const offsetPosition = elementPosition - headerOffset;
+				console.log("target top = " + offsetPosition + ","+ "scrolling="+window.scrollY);
+				window.scrollTo({
+					top: offsetPosition,
+					behavior: "smooth",
+				});
+			},50);
 		}
 	}
 };

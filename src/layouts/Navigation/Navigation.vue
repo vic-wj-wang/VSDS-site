@@ -178,7 +178,8 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watch , onMounted} from "vue";
+import { useRoute } from "vue-router";
 import logoIcon from "@/assets/images/logo-vs.svg";
 const isActive = ref(false);
 const isActiveMnav = ref(false);
@@ -191,7 +192,7 @@ function toggleParent(index) {
 const activeNavs = ref(new Set());
 const activeSubNav = ref(null);
 const toggleNav = (index) => {
-	// console.log("first name = "+index);
+	console.log("first name = "+index);
 	if (activeNavs.value.has(index)) {
 		activeNavs.value.delete(index);
 	} else {
@@ -199,11 +200,58 @@ const toggleNav = (index) => {
 	}
 };
 const toggleSubNav = (index) => {
-	// console.log("sub name = "+index);
-  activeSubNav.value = activeSubNav.value === index ? null : index;
+	console.log("sub name = "+index);
+  	activeSubNav.value = activeSubNav.value === index ? null : index;
 };
+// ====== 根據網址展開
 
-// ham 開關
+onMounted(() => {
+  const path = location.href;;
+
+  // 根據路徑判斷主選單和子選單
+  if (path.includes("/GetStarted")) {
+    activeNavs.value.add("nav1");
+    if (path.includes("/Overview")) {
+      activeSubNav.value = "nav1-1";
+    }
+  } else if (path.includes("/Foundations")) {
+    activeNavs.value.add("nav2");
+    if (path.includes("/Accessibility")) {
+      activeSubNav.value = "nav2-1";
+    } else if (path.includes("/Designtokens")) {
+      activeSubNav.value = "nav2-2";
+    } else if (path.includes("/Themes")) {
+      activeSubNav.value = "nav2-3";
+    } else if (path.includes("/Interaction")) {
+      activeSubNav.value = "nav2-4";
+    }
+  } else if (path.includes("/Styles")) {
+    activeNavs.value.add("nav3");
+    if (path.includes("/Overview")) {
+      activeSubNav.value = "nav3-1";
+    } else if (path.includes("/Color")) {
+      activeSubNav.value = "nav3-2";
+    } else if (path.includes("/Elevation")) {
+      activeSubNav.value = "nav3-3";
+    } else if (path.includes("/Iconography")) {
+      activeSubNav.value = "nav3-4";
+    } else if (path.includes("/Layout")) {
+      activeSubNav.value = "nav3-5";
+    } else if (path.includes("/Typography")) {
+      activeSubNav.value = "nav3-6";
+    }
+  } else if (path.includes("/Components")) {
+    activeNavs.value.add("nav4");
+    if (path.includes("/Design-Kit")) {
+      activeSubNav.value = "nav4-1";
+    } else if (path.includes("/Modular-Components")) {
+      activeSubNav.value = "nav4-2";
+    }
+  }
+  console.log("path="+path+", firstname="+activeNavs.value+", subname="+activeSubNav.value);
+});
+
+// ========= ham 開關
 function toggleMenu(status) {
 	isActiveMnav.value = !isActiveMnav.value;
 }
