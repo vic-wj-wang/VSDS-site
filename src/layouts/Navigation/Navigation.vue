@@ -76,7 +76,7 @@
 										<div class="nav-tri mt-2 pl-3" v-if="activeSubNav === 'nav2-1'">
 											<router-link :to="{ name: 'AccessibilityOverview', params: {} }" class="nav-tri--item" activeClass="!text-link font-bold">Overview</router-link>
 											<router-link :to="{ name: 'AccessibilityChecklist', params: {} }" class="nav-tri--item" activeClass="!text-link font-bold">Checklist</router-link>
-											<router-link :to="{ name: 'AccessibilityDesigningColorTypography', params: {} }" class="nav-tri--item" activeClass="!text-link font-bold">Designing</router-link>
+											<router-link :to="{ name: 'AccessibilityDesigningColorTypography', params: {} }" v-if="isTabPage" :class="{ '!text-link font-bold router-link-exact-active': isNavTriActive }" class="nav-tri--item" activeClass="!text-link font-bold">Designing</router-link>
 										</div>
 									</transition>
 								</div>
@@ -178,12 +178,17 @@
 </template>
 
 <script setup>
-import { ref, watch , onMounted} from "vue";
-import { useRoute } from "vue-router";
+import { ref, watch,onMounted,nextTick} from "vue";
 import logoIcon from "@/assets/images/logo-vs.svg";
+import { useRoute,createRouter, createWebHistory } from 'vue-router';
+
 const isActive = ref(false);
 const isActiveMnav = ref(false);
 const activeParent = ref(null);
+const isTabPage = ref(true); // 控制元素顯示與否
+const isNavTriActive = ref(false); // 控制是否添加動態 class
+const route = useRoute();
+const tabpageDesigning = ref(null);
 
 function toggleParent(index) {
 	activeParent.value = index;
@@ -204,12 +209,10 @@ const toggleSubNav = (index) => {
   	activeSubNav.value = activeSubNav.value === index ? null : index;
 };
 // ====== 根據網址展開
+let path = route.fullPath;
 
-onMounted(() => {
-  const path = location.href;;
-
-  // 根據路徑判斷主選單和子選單
-  if (path.includes("/GetStarted")) {
+const setActiveNavFromRoute = (e) => {
+	if (path.includes("/GetStarted")) {
     activeNavs.value.add("nav1");
     if (path.includes("/Overview")) {
       activeSubNav.value = "nav1-1";
@@ -218,6 +221,12 @@ onMounted(() => {
     activeNavs.value.add("nav2");
     if (path.includes("/Accessibility")) {
       activeSubNav.value = "nav2-1";
+	  if(path.includes("/Designing")){
+		// e.classList.add("router-link-exact-active");
+		isNavTriActive.value = true;
+	  }else{
+		isNavTriActive.value = false;
+	  }
     } else if (path.includes("/Designtokens")) {
       activeSubNav.value = "nav2-2";
     } else if (path.includes("/Themes")) {
@@ -248,8 +257,28 @@ onMounted(() => {
       activeSubNav.value = "nav4-2";
     }
   }
-  console.log("path="+path+", firstname="+activeNavs.value+", subname="+activeSubNav.value);
-});
+};
+
+watch(
+  () => {
+	path = route.fullPath;
+	console.log(path +","+ activeNavs.value);
+	// el = document.querySelector(".tabpage-Designing");
+	setActiveNavFromRoute();
+	nextTick(() => {
+		setTimeout(() => {
+			if (tabpageDesigning.value) {
+			console.log(tabpageDesigning);  // 這時候應該能夠正確訪問到 ref 元素
+			tabpageDesigning.value.classList.add("tabpageDesigning");
+			// setActiveNavFromRoute(tabpageDesigning);
+			}
+			
+		},300)
+		
+    });
+  }
+);
+
 
 // ========= ham 開關
 function toggleMenu(status) {

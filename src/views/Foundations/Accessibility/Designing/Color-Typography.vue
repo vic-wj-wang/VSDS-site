@@ -191,10 +191,13 @@
             <ContentElm>
                 <ul>
                     <li class="mb-4">
-                        <router-link class="content-nav"  :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#accessibility-design-color' }">Color</router-link>
+                        <router-link class="content-nav hidden"  :class="{ current: activeIndex === 0 }" @click="contentActive(0)" :to="{hash: '#color-typography' }">Color & Typography</router-link>
                     </li>
                     <li class="mb-4">
-                        <router-link class="content-nav"  :class="{ current: activeIndex === 1 }" @click="contentActive(1)" :to="{hash: '#accessibility-design-typography' }">Typography</router-link>
+                        <router-link class="content-nav"  :class="{ current: activeIndex === 1 }" @click="contentActive(1)" :to="{hash: '#accessibility-design-color' }">Color</router-link>
+                    </li>
+                    <li class="mb-4">
+                        <router-link class="content-nav"  :class="{ current: activeIndex === 2 }" @click="contentActive(2)" :to="{hash: '#accessibility-design-typography' }">Typography</router-link>
                     </li>
                 </ul>
             </ContentElm>
